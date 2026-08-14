@@ -1,0 +1,18 @@
+# OS
+.DS_Store
+
+# Python / Jupyter (course uses Scikit-learn, Pandas, AutoGluon in Jupyter/Colab)
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# Data (don't commit large/raw datasets by default — document source + how to fetch instead)
+data/raw/
+*.csv.gz
+
+# Editors
+.vscode/
+.idea/
