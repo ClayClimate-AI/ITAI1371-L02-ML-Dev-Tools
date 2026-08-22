@@ -1,18 +1,54 @@
-# OS
-.DS_Store
-
-# Python / Jupyter (course uses Scikit-learn, Pandas, AutoGluon in Jupyter/Colab)
-__pycache__/
-*.pyc
-.ipynb_checkpoints/
+# --- Required baseline ---
 .venv/
-venv/
-.env
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.cursor/
+.DS_Store
+.pytest_cache/
 
-# Data (don't commit large/raw datasets by default — document source + how to fetch instead)
+# --- Reusable workflow engine (kept local, not published with this repo) ---
+AGENTS.md
+CLAUDE.md
+prompt-history.md
+docs/session-kickoff-prompt.md
+docs/submission-runbook.md
+docs/naming-conventions.md
+docs/pdf-export-guide.md
+
+# --- Python / virtual environment (extra variants) ---
+venv/
+env/
+*$py.class
+.env
+.env.*
+
+# --- Jupyter (extra variants) ---
+*-checkpoint.ipynb
+
+# --- Verification / export artifacts ---
+_env_verify_test.png
+*.html
+
+# --- Informal notes (must never enter history) ---
+CODE_BREAKDOWN.md
+scratch.md
+notes-to-self.md
+TODO-private.md
+
+# --- Secrets (never, under any circumstances) ---
+*.pem
+*.key
+credentials.json
+
+# --- Data (don't commit large/raw datasets by default) ---
 data/raw/
 *.csv.gz
 
-# Editors
+# --- OS noise ---
+Thumbs.db
+
+# --- Editors ---
 .vscode/
 .idea/
+*.swp

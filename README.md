@@ -1,49 +1,109 @@
-# Module 02 — Machine Learning Tools
+# ITAI-1371 — L02: Machine Learning Development Tools
 
-**Team:** {Team name — required even for solo work} — **Members:** {your name(s); everyone listed vouches they participated}
-**Course:** ITAI-1371 — Intro to Machine Learning
-**Type:** Lab / Assignment / Exam _(delete the two that don't apply)_
-**Mode:** Individual / Group _(delete one — if group, add a `CONTRIBUTIONS.md` per syllabus's mandatory contribution journal requirement)_
-**Status:** Not started — not yet assigned in class, see TRACKER.md
+> **Course:** ITAI-1371 Introduction to Machine Learning — Houston Community College
+> **Module:** 2 — Essential Development Environment (pandas, NumPy, matplotlib)
+> **Environment:** Cursor / VS Code + local Python virtual environment + Git
+> **Deadline:** August 30, 11:59 PM
+> **Points:** 100
+> **Method:** Spec-driven development — specs written before code, defensive validation before analysis
 
-This README **is the technical report** for this deliverable — the course requires every submission to be treated as one. Write for an audience who does not have a copy of the assignment instructions.
+---
 
-## Objective
+## What this repository is
 
-{What this deliverable asks for, and why — stated plainly, not assuming the reader has the prompt in front of them. Fill in once the real assignment is available.}
+This is not a folder of homework files. It is a **spec-anchored workspace**: the specification declares intent, the notebook merely realizes it. Every artifact here exists to make the work verifiable — by me, by a teammate, by an instructor, or by an AI agent picking the project up cold.
 
-## Activities Performed
+**Problem → Value → Feature**
 
-{What was actually done to complete this — the process, not just the outcome. Required: report the activity, not only the results.}
+| Layer | Statement |
+|---|---|
+| **Problem** | Notebook-based ML work drifts. Cells run out of order, silent `NaN`s corrupt data without raising errors, and reflective writing collapses into "first I did X, then Y." |
+| **Value** | A pipeline that is provably correct before a model ever sees the data, plus documentation that demonstrates ownership rather than narration. |
+| **Feature** | 16 vectorized exercises, guarded by four defensive assertions, exported to clean PDFs, backed by a reflective journal grounded in real debugging. |
 
-## Results Obtained
+---
 
-{What resulted from the activities above — findings, model output, metrics, conclusions.}
+## Quick start
 
-## What Was Learned
+```bash
+# 1. Create and activate the virtual environment
+python -m venv .venv
+source .venv/bin/activate          # macOS / Linux
+# .venv\Scripts\activate           # Windows CMD
+# .venv\Scripts\Activate.ps1       # Windows PowerShell
 
-{Explicitly state what was learned doing this — required by the course's technical-report rubric, not optional framing.}
+# 2. Install dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
 
-## Terms / Concepts Researched
+# 3. Verify the environment before touching the notebook
+python scripts/verify_setup.py
 
-{Any term, concept, or idea encountered that was unfamiliar — what was researched and what was found. Required to be shown, not just applied silently. Delete this section only if nothing came up.}
+# 4. Confirm the validator itself is sound
+pytest tests/ -v
+```
 
-## Citations
+If `verify_setup.py` exits non-zero, **stop**. Do not start the lab on a broken environment.
 
-{Any intellectual property used — a URL is generally enough, inline or as a numbered list here. Verbatim wording must be in quotation marks. Make it easy for the reader to verify claims.}
+---
 
-## Workflow used
+## Repository map
 
-Built with the `mattpocock/skills` SDD chain: `grill-with-docs → to-spec → to-tickets → implement → code-review`. See `CONTEXT.md` for resolved terms and `docs/adr/` for hard decisions.
+```
+ITAI1371-L02-ML-Dev-Tools/
+│
+├── README.md                       # You are here — human entry point
+├── Product_Spec.md                 # WHY + WHAT: intent, Gherkin acceptance criteria
+├── Tech_Spec.md                    # HOW: architectural boundaries, 9 pillars, call graph
+├── requirements.txt                # Pinned dependency set
+├── .gitignore
+│
+├── Module_02_Lab_Exercises.ipynb   # THE DELIVERABLE — 16 exercises
+│
+├── src/
+│   └── pipeline_validator.py       # PipelineValidator — the four defensive checks
+│
+├── tests/
+│   └── test_pipeline_validator.py  # Proves the validator catches what it claims to
+│
+├── scripts/
+│   └── verify_setup.py             # Environment gate — run before any lab work
+│
+├── docs/
+│   ├── environment-setup.md        # Full local setup walkthrough
+│   ├── tdd-assertion-guide.md      # Why each assertion exists (the deep reasoning)
+│   ├── debugging-odyssey.md        # Working bug log — feeds Journal Section 2
+│   └── reflective-journal.md       # Journal draft source → exports to PDF
+│
+└── deliverables/                   # Final PDFs, named per instructor spec
+```
 
-## AI usage
+---
 
-See [`AI-USAGE.md`](./AI-USAGE.md) — required disclosure per the syllabus's AI Use Policy.
+## Required deliverables
 
-## Learning notes
+| Deliverable | Exact filename | Location |
+|---|---|---|
+| Raw notebook | `Module_02_Lab_Exercises.ipynb` | repo root |
+| Notebook PDF | `L02_TuringCollective_ITAI1371.pdf` | `deliverables/` |
+| Reflective journal PDF (1–2 pages) | `L02_Journal_TuringCollective_ITAI1371.pdf` | `deliverables/` |
 
-See [`NOTES.md`](./NOTES.md) — your own working notes as you go, separate from this README's finished "What Was Learned" section.
+> **Group name is not final.** `TuringCollective` is the proposed name pending team confirmation. Once Canvas registration is locked, do a single find-and-replace across this repo. Instructor-mandated filenames are the one place where this repo's own naming rules do **not** apply — match the assignment sheet character for character.
 
-## Reproducing / running this
+---
 
-{Fill in once there's something to run — setup steps, how to open the notebook, how to run tests.}
+## Working method
+
+Work proceeds one exercise at a time: specify, implement, verify, commit. No batch dumps, no "write all 16 cells." Each defensive assertion in `pipeline_validator.py` exists for a reason documented in `docs/tdd-assertion-guide.md`, and each real bug hit along the way is logged in `docs/debugging-odyssey.md` rather than silently fixed.
+
+---
+
+## Where to start reading
+
+1. [`Product_Spec.md`](Product_Spec.md) — what "done" means, in Gherkin
+2. [`Tech_Spec.md`](Tech_Spec.md) — the boundaries the code may not cross
+3. [`docs/tdd-assertion-guide.md`](docs/tdd-assertion-guide.md) — why the four assertions exist
+
+---
+
+*Engineering Pilot: Joseph Clay. The specification is the source of truth; the code realizes it.*
