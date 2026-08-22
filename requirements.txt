@@ -8,6 +8,9 @@ numpy>=1.24
 pandas>=2.0
 matplotlib>=3.7
 
+# --- Lab notebook dependency (docs/adr/0001-add-scikit-learn-for-lab-notebook.md) ---
+scikit-learn>=1.4
+
 # --- Notebook kernel ---
 ipykernel>=6.0
 notebook>=7.0
@@ -16,5 +19,5 @@ notebook>=7.0
 pytest>=7.0
 
 # --- Explicitly NOT included ---
-# scikit-learn, seaborn, plotly, torch, tensorflow
+# seaborn, plotly, torch, tensorflow
 # These require a Tech_Spec.md amendment before being added. See Product_Spec.md section 4.
