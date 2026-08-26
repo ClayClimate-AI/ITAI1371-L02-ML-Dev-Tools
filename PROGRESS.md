@@ -16,7 +16,7 @@
 | B | Cell 4 — load_iris | No exception; shape (150, 4); 4 feature names; 3 target classes | Pre-written (untouched) | PASS | 49f4dde | Ran in same kernel session as Cell 2. Output: shape (150, 4), features = 4 sepal/petal measurements, target classes = setosa/versicolor/virginica |
 | C | Cell 5 — DataFrame | No exception; head shows 5 columns (4 measurements + species=setosa); info shows 150 entries, 5 columns, no nulls | Pre-written (untouched) | PASS | 72c1533 | Ran in same kernel session as Cells 2 and 4. Trailing `None` after df.info() confirmed as expected notebook noise |
 | D | Cell 7 — Scatter plot | No exception; 3 colored clusters (red/blue/green); correct axis labels, title, legend; congratulations line printed | Pre-written (untouched) | PASS | 7057c8d | Ran in same kernel session as Cells 2, 4, 5. Confirmed visually: red=setosa, blue=versicolor, green=virginica clusters distinct |
-| E | Cell 9 — groupby stats | No exception; grouped means by species match known Iris values; value_counts shows 50/50/50 | Pre-written (untouched) | PASS | pending | Ran in same kernel session with df from Cell 5. Confirmed printed means and 50/50/50 species counts |
+| E | Cell 9 — groupby stats | No exception; grouped means by species match known Iris values; value_counts shows 50/50/50 | Pre-written (untouched) | PASS | 7562003 | Ran in same kernel session with df from Cell 5. Confirmed printed means and 50/50/50 species counts |
 
 ## Session handoffs
 ### 2026-08-25
