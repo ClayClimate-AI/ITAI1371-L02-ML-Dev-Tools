@@ -18,7 +18,7 @@
 | D | Cell 7 — Scatter plot | No exception; 3 colored clusters (red/blue/green); correct axis labels, title, legend; congratulations line printed | Pre-written (untouched) | PASS | 7057c8d | Ran in same kernel session as Cells 2, 4, 5. Confirmed visually: red=setosa, blue=versicolor, green=virginica clusters distinct |
 | E | Cell 9 — groupby stats | No exception; grouped means by species match known Iris values; value_counts shows 50/50/50 | Pre-written (untouched) | PASS | 7562003 | Ran in same kernel session with df from Cell 5. Confirmed printed means and 50/50/50 species counts |
 | F | Cell 12 — Task 1 (mean/std + asserts) | No exception, including no AssertionError; prints mean 5.84 cm, std 0.83 cm; ✅ Task 1 line printed | Pre-written (untouched) | PASS | 6bbf1d9 | Notebook's own inline assert checks (isinstance on np.floating) passed silently. Ran in same kernel session with df, np from Cells 5/2 |
-| G | Cell 13 — Task 2 (bar chart) | No exception; 3 equal-height bars (50 each); correct title/axis labels; distribution dict shows 50/50/50; ✅ Task 2 line printed | Pre-written (untouched) | PASS | pending | Ran in same kernel session with plt, df from Cells 2/5. Confirmed visually: 3 bars height 50 for setosa/versicolor/virginica |
+| G | Cell 13 — Task 2 (bar chart) | No exception; 3 equal-height bars (50 each); correct title/axis labels; distribution dict shows 50/50/50; ✅ Task 2 line printed | Pre-written (untouched) | PASS | 89eb363 | Ran in same kernel session with plt, df from Cells 2/5. Confirmed visually: 3 bars height 50 for setosa/versicolor/virginica |
 
 ## Session handoffs
 ### 2026-08-25
