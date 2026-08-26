@@ -19,7 +19,7 @@
 | E | Cell 9 — groupby stats | No exception; grouped means by species match known Iris values; value_counts shows 50/50/50 | Pre-written (untouched) | PASS | 7562003 | Ran in same kernel session with df from Cell 5. Confirmed printed means and 50/50/50 species counts |
 | F | Cell 12 — Task 1 (mean/std + asserts) | No exception, including no AssertionError; prints mean 5.84 cm, std 0.83 cm; ✅ Task 1 line printed | Pre-written (untouched) | PASS | 6bbf1d9 | Notebook's own inline assert checks (isinstance on np.floating) passed silently. Ran in same kernel session with df, np from Cells 5/2 |
 | G | Cell 13 — Task 2 (bar chart) | No exception; 3 equal-height bars (50 each); correct title/axis labels; distribution dict shows 50/50/50; ✅ Task 2 line printed | Pre-written (untouched) | PASS | 89eb363 | Ran in same kernel session with plt, df from Cells 2/5. Confirmed visually: 3 bars height 50 for setosa/versicolor/virginica |
-| H | Cell 14 — Markdown reflection | FILL-IN placeholders replaced with real content; no code cells touched; content matches human-approved draft exactly | Human-authored (via C1-approved draft) | PASS | pending | Dataset Overview, Key Findings, Questions, Reflection sections written per approved draft; confirmed by human review of rendered cell |
+| H | Cell 14 — Markdown reflection | FILL-IN placeholders replaced with real content; no code cells touched; content matches human-approved draft exactly | Human-authored (via C1-approved draft) | PASS | db2733a | Dataset Overview, Key Findings, Questions, Reflection sections written per approved draft; confirmed by human review of rendered cell |
 
 ## Session handoffs
 ### 2026-08-25
