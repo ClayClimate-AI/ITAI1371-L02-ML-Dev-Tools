@@ -5,7 +5,7 @@
 ## Current state
 - **Phase:** 0 (Setup) — complete
 - **Last completed unit:** H — Cell 14 (markdown reflection, filled in)
-- **Next unit:** Harvest — not started (awaiting go-ahead)
+- **Next step:** Harvest step 2 — PDF export (not started, awaiting go-ahead)
 - **Environment:** .venv created | verify_setup: PASS | pytest: PASS (18 passed) | CI: PASS (run #1, ad12277)
 
 ## Unit log
@@ -21,8 +21,16 @@
 | G | Cell 13 — Task 2 (bar chart) | No exception; 3 equal-height bars (50 each); correct title/axis labels; distribution dict shows 50/50/50; ✅ Task 2 line printed | Pre-written (untouched) | PASS | 89eb363 | Ran in same kernel session with plt, df from Cells 2/5. Confirmed visually: 3 bars height 50 for setosa/versicolor/virginica |
 | H | Cell 14 — Markdown reflection | FILL-IN placeholders replaced with real content; no code cells touched; content matches human-approved draft exactly | Human-authored (via C1-approved draft) | PASS | db2733a | Dataset Overview, Key Findings, Questions, Reflection sections written per approved draft; confirmed by human review of rendered cell |
 
+## Harvest log
+| Step | Description | Validated | Commit | Notes |
+|------|-------------|-----------|--------|-------|
+| 1 | Clean full notebook run (Restart-equivalent Run All via `nbconvert --execute --inplace`) | PASS | 2d36496 | Exit code 0; no cell error outputs (verified by scanning notebook JSON); execution counts 1→7 in order across cells 2,4,5,7,9,12,13; plot outputs present for Cells 7 and 13 |
+| 2 | PDF export | — | — | Not started |
+| 3 | Reflective Journal | — | — | Not started |
+| 4 | Contribution Journal | — | — | Not started |
+
 ## Session handoffs
 ### 2026-08-25
-- Done: repo structure clean and pushed; system operating files local; template v1.1 locked; Phase 0 gates run — verify_setup.py PASS, pytest 18/18 PASS; CI workflow added and passing (ADR 0002); Unit A (Cell 2 — Imports) PASS after adding scikit-learn dependency (ADR 0001); Unit B (Cell 4 — load_iris) PASS; Unit C (Cell 5 — DataFrame) PASS; Unit D (Cell 7 — scatter plot) PASS; Unit E (Cell 9 — groupby stats) PASS; Unit F (Cell 12 — Task 1) PASS; Unit G (Cell 13 — Task 2) PASS; Unit H (Cell 14 — markdown reflection) PASS
+- Done: repo structure clean and pushed; system operating files local; template v1.1 locked; Phase 0 gates run — verify_setup.py PASS, pytest 18/18 PASS; CI workflow added and passing (ADR 0002); Unit A (Cell 2 — Imports) PASS after adding scikit-learn dependency (ADR 0001); Unit B (Cell 4 — load_iris) PASS; Unit C (Cell 5 — DataFrame) PASS; Unit D (Cell 7 — scatter plot) PASS; Unit E (Cell 9 — groupby stats) PASS; Unit F (Cell 12 — Task 1) PASS; Unit G (Cell 13 — Task 2) PASS; Unit H (Cell 14 — markdown reflection) PASS; Harvest step 1 (clean full run) PASS
 - Blocked: none
-- Next exact action: Harvest — export notebook to PDF, write reflective journal deliverable, prepare final submission (not started; awaiting go-ahead)
+- Next exact action: Harvest step 2 — PDF export (not started; awaiting go-ahead). Do not write journals yet.
