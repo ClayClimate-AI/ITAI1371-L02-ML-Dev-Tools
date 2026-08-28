@@ -86,9 +86,9 @@ ITAI1371-L02-ML-Dev-Tools/
 |---|---|---|
 | Raw notebook | `Module_02_Lab_Exercises.ipynb` | repo root |
 | Notebook PDF | `L02_TuringCollective_ITAI1371.pdf` | `deliverables/` |
-| Reflective journal PDF (1–2 pages) | `L02_Journal_TuringCollective_ITAI1371.pdf` | `deliverables/` |
+| Reflective journal PDF (1–2 pages) | `L02Journal_TuringCollective_ITAI1371.pdf` | `deliverables/` |
 
-> **Group name is not final.** `TuringCollective` is the proposed name pending team confirmation. Once Canvas registration is locked, do a single find-and-replace across this repo. Instructor-mandated filenames are the one place where this repo's own naming rules do **not** apply — match the assignment sheet character for character.
+> **Group name confirmed** (Pilot, 2026-08-27): "The Turing Collective", filename token `TuringCollective` (OQ-1 resolved). Filenames follow the Canvas "File Naming Convention" section character for character — note the journal file has **no underscore after `L02`** (`L02Journal_…`, not `L02_Journal_…`). Instructor-mandated filenames are the one place where this repo's own naming rules do **not** apply.
 
 ---
 

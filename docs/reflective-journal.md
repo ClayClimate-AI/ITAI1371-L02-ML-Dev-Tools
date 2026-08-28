@@ -1,7 +1,7 @@
 # L02 Reflective Journal — Draft Source
 
 > **This file is the source. The deliverable is the PDF exported from it:**
-> `deliverables/L02_Journal_<GroupName>_ITAI1371.pdf`
+> `deliverables/L02Journal_TuringCollective_ITAI1371.pdf` (Canvas pattern — no underscore after `L02`)
 >
 > Export instructions: `docs/pdf-export-guide.md`. Target length: **1–2 pages rendered.**
 
@@ -102,8 +102,7 @@ Concrete tells to eliminate: "first," "then," "next," "after that," "we started 
 - [ ] Section 2 traces an actual mental-model correction, not a fix summary
 - [ ] Renders to **1–2 pages** — not three, not half
 - [ ] Tone is professional and analytical, but recognizably yours
-- [ ] Exported as `L02_Journal_<GroupName>_ITAI1371.pdf` into `deliverables/`
-- [ ] `<GroupName>` matches Canvas registration exactly
+- [ ] Exported as `L02Journal_TuringCollective_ITAI1371.pdf` into `deliverables/` (no underscore after `L02`)
 
 ---
 

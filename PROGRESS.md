@@ -5,7 +5,7 @@
 ## Current state
 - **Phase:** 0 (Setup) — complete
 - **Last completed unit:** H — Cell 14 (markdown reflection, filled in)
-- **Next step:** Harvest step 2 — PDF export (not started, awaiting go-ahead)
+- **Next step:** Harvest step 3 — Reflective Journal (not started; interview-only per AGENTS.md, awaiting go-ahead)
 - **Environment:** .venv created | verify_setup: PASS | pytest: PASS (18 passed) | CI: PASS (run #1, ad12277)
 
 ## Unit log
@@ -25,7 +25,7 @@
 | Step | Description | Validated | Commit | Notes |
 |------|-------------|-----------|--------|-------|
 | 1 | Clean full notebook run (Restart-equivalent Run All via `nbconvert --execute --inplace`) | PASS | 2d36496 | Exit code 0; no cell error outputs (verified by scanning notebook JSON); execution counts 1→7 in order across cells 2,4,5,7,9,12,13; plot outputs present for Cells 7 and 13 |
-| 2 | PDF export | — | — | Not started |
+| 2 | PDF export → `deliverables/L02_TuringCollective_ITAI1371.pdf` | PASS | _pending commit_ | Regenerated via `nbconvert --to html` → `white-space:pre-wrap` CSS injected into `<head>` → headless Chrome `--print-to-pdf --no-pdf-header-footer`. C5 visual audit PASS: 10 pp, no code clipping (all previously-clipped lines now wrap), both plots whole and unsplit, counters [1]→[7], syntax highlighting preserved, no browser header/footer, no `file:///` path. Superseded ad-hoc PDF `L02_Turing_Collective_ITAI1371.pdf` (wrong name, footer path, clipped code) — deleted, never committed. Notebook re-execute produced timestamp-only diff → reverted (content identical to 2d36496). |
 | 3 | Reflective Journal | — | — | Not started |
 | 4 | Contribution Journal | — | — | Not started |
 
@@ -34,3 +34,9 @@
 - Done: repo structure clean and pushed; system operating files local; template v1.1 locked; Phase 0 gates run — verify_setup.py PASS, pytest 18/18 PASS; CI workflow added and passing (ADR 0002); Unit A (Cell 2 — Imports) PASS after adding scikit-learn dependency (ADR 0001); Unit B (Cell 4 — load_iris) PASS; Unit C (Cell 5 — DataFrame) PASS; Unit D (Cell 7 — scatter plot) PASS; Unit E (Cell 9 — groupby stats) PASS; Unit F (Cell 12 — Task 1) PASS; Unit G (Cell 13 — Task 2) PASS; Unit H (Cell 14 — markdown reflection) PASS; Harvest step 1 (clean full run) PASS
 - Blocked: none
 - Next exact action: Harvest step 2 — PDF export (not started; awaiting go-ahead). Do not write journals yet.
+
+### 2026-08-27
+- Done: OQ-1 resolved — group name "The Turing Collective", filename token `TuringCollective`; Canvas "File Naming Convention" confirmed as authoritative (`L02_<Token>_ITAI1371.pdf`, `L02Journal_<Token>_ITAI1371.pdf` — no `_` after `L02`). Corrected filename patterns + stale `[16]`→`[7]` cell-counter refs across Product_Spec.md, README.md, docs/reflective-journal.md (tracked) and docs/pdf-export-guide.md, docs/submission-runbook.md (gitignored engine files). **Harvest step 2 PASS** — regenerated `deliverables/L02_TuringCollective_ITAI1371.pdf`, C5 visual audit clean; deleted superseded ad-hoc `L02_Turing_Collective_ITAI1371.pdf`.
+- Blocked: none
+- Open flags for Pilot: (1) notebook lives at `src/Module_02_Lab_Exercise.ipynb` (singular) but every doc says `Module_02_Lab_Exercises.ipynb` (plural) at repo root — reconcile before submission; (2) `.gitignore` keeps AGENTS.md/CLAUDE.md/prompt-history.md/submission-runbook.md/pdf-export-guide.md/naming-conventions.md/session-kickoff-prompt.md local — conflicts with Canvas guidance to push engineering guides as evidence of method; (3) PR #1 self-merge (entry 001) still uncorrected.
+- Next exact action: Harvest step 3 — Reflective Journal. Interview the Pilot; do not draft it. Source: docs/reflective-journal.md.

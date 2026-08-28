@@ -58,9 +58,12 @@ Scenario: Environment gate blocks work on a broken install
 Scenario: Notebook runs clean from a cold kernel
   Given the notebook is bound to the .venv kernel
   When I select "Restart Kernel and Run All Cells"
-  Then all 16 exercises execute without raising
-  And the execution counters read [1] through [16] in unbroken sequence
+  Then all 7 code cells execute without raising
+  And the execution counters read [1] through [7] in unbroken sequence
   And no cell output exceeds 40 printed lines
+
+# The notebook has 7 code cells; the remaining cells are markdown. The assignment
+# sheet's "16 cells" counts markdown cells too.
 
 Scenario: A transformation is attempted without a guard
   Given an exercise that modifies array shape or DataFrame structure
@@ -112,8 +115,13 @@ Scenario: Deliverables are correctly named and located
   Given the lab and journal are complete
   When I inspect the deliverables/ directory
   Then it contains L02_<GroupName>_ITAI1371.pdf
-  And it contains L02_Journal_<GroupName>_ITAI1371.pdf
+  And it contains L02Journal_<GroupName>_ITAI1371.pdf
+  And <GroupName> is a single concatenated token with no spaces or internal separators
   And <GroupName> exactly matches the group name registered on Canvas
+
+# Per the Canvas "File Naming Convention" section: L02_YourGroupName_ITAI1371.pdf
+# and L02Journal_YourGroupName_ITAI1371.pdf (note: no underscore after L02 in the
+# journal filename). Confirmed <GroupName> = TuringCollective.
 
 Scenario: The journal is reflective, not descriptive
   Given the completed reflective journal
@@ -157,7 +165,7 @@ Retired metrics (output): cells completed, lines written, hours logged.
 | North Star | Target | How it is measured |
 |---|---|---|
 | **Pipeline integrity** | Zero silent `NaN`s reach any downstream step | All four `PipelineValidator` checks pass on every guarded transformation |
-| **Reproducibility** | 100% clean cold run | Restart-and-run-all completes `[1]`–`[16]` with no manual intervention |
+| **Reproducibility** | 100% clean cold run | Restart-and-run-all completes `[1]`–`[7]` with no manual intervention |
 | **Technical ownership** | Pilot can P-I-O-F any function in the notebook without notes | Self-test before submission |
 | **Documented pushback** | ≥ 2 logged instances of challenging or refactoring AI output | `prompt-history.md` |
 | **Debugging depth** | ≥ 2 complete bug logs with root cause identified | `docs/debugging-odyssey.md` |
@@ -171,7 +179,7 @@ Track unresolved items here rather than guessing. An agent encountering an open 
 
 | ID | Question | Status | Owner |
 |---|---|---|---|
-| OQ-1 | Final group name for deliverable filenames — "Turing Collective" proposed, unconfirmed | **OPEN** | Pilot / team |
+| OQ-1 | Final group name for deliverable filenames — confirmed "The Turing Collective" (Pilot, 2026-08-27); filename token is `TuringCollective` per Canvas pattern → `L02_TuringCollective_ITAI1371.pdf`, `L02Journal_TuringCollective_ITAI1371.pdf` | **RESOLVED** | Pilot / team |
 | OQ-2 | Does the instructor require the 16 exercises in the assignment's original order? | **OPEN** | Pilot — verify on Canvas |
 | OQ-3 | Is the notebook submitted via GitHub link, Canvas upload, or both? | **OPEN** | Pilot — verify on Canvas |
 
