@@ -90,7 +90,7 @@ Expected final lines:
 
 ```
 [OK] Environment verified. You are cleared to open
-     Module_02_Lab_Exercises.ipynb and bind the .venv kernel.
+     Module_02_Lab_Exercise.ipynb and bind the .venv kernel.
 ```
 
 **If it exits non-zero, stop.** The whole point of this gate is to remove ambiguity: if the environment is verified and something then breaks, the bug is in your code. Without the gate, every error has two possible causes and you will waste hours on the wrong one.
@@ -118,7 +118,7 @@ All tests must pass. These verify that the `PipelineValidator` checks actually *
 
 This step is skipped more often than any other, and it is the cause of the most confusing failure mode in the entire project.
 
-1. Open `Module_02_Lab_Exercises.ipynb`
+1. Open `Module_02_Lab_Exercise.ipynb`
 2. Click the kernel selector, **top-right** of the notebook pane
 3. Choose **Python Environments** → the interpreter inside `.venv`
 4. Confirm the selector displays `.venv` and not a system or global Python

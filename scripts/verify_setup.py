@@ -207,7 +207,7 @@ def main() -> int:
         return 1
 
     print("[OK] Environment verified. You are cleared to open")
-    print("     Module_02_Lab_Exercises.ipynb and bind the .venv kernel.")
+    print("     Module_02_Lab_Exercise.ipynb and bind the .venv kernel.")
     print(BAR)
     return 0
 

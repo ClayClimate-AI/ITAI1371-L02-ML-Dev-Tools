@@ -58,10 +58,12 @@ ITAI1371-L02-ML-Dev-Tools/
 ├── requirements.txt                # Pinned dependency set
 ├── .gitignore
 │
-├── Module_02_Lab_Exercises.ipynb   # THE DELIVERABLE — 16 exercises
+├── .github/
+│   └── workflows/ci.yml            # Re-runs the Phase 0 gates on every push (see ADR 0002)
 │
 ├── src/
-│   └── pipeline_validator.py       # PipelineValidator — the four defensive checks
+│   ├── Module_02_Lab_Exercise.ipynb  # THE LAB NOTEBOOK — 16 cells (7 code + 9 markdown)
+│   └── pipeline_validator.py         # PipelineValidator — the four defensive checks
 │
 ├── tests/
 │   └── test_pipeline_validator.py  # Proves the validator catches what it claims to
@@ -70,31 +72,41 @@ ITAI1371-L02-ML-Dev-Tools/
 │   └── verify_setup.py             # Environment gate — run before any lab work
 │
 ├── docs/
+│   ├── adr/                        # Architecture Decision Records — what changed and why
+│   ├── L02-TEAM-PDF-INTAKE.md      # How teammates submit their PDFs (branch + PR only)
 │   ├── environment-setup.md        # Full local setup walkthrough
 │   ├── tdd-assertion-guide.md      # Why each assertion exists (the deep reasoning)
 │   ├── debugging-odyssey.md        # Working bug log — feeds Journal Section 2
 │   └── reflective-journal.md       # Journal draft source → exports to PDF
 │
-└── deliverables/                   # Final PDFs, named per instructor spec
+└── deliverables/                   # Personal submission PDFs — one set per team member
+    ├── notebooks/                  # L02_FirstLast_ITAI1371.pdf
+    ├── journals/                   # L02Journal_FirstLast_ITAI1371.pdf
+    └── contributions/              # L02Contribution_FirstLast_ITAI1371.pdf
 ```
 
 ---
 
 ## Required deliverables
 
-| Deliverable | Exact filename | Location |
-|---|---|---|
-| Raw notebook | `Module_02_Lab_Exercises.ipynb` | repo root |
-| Notebook PDF | `L02_TuringCollective_ITAI1371.pdf` | `deliverables/` |
-| Reflective journal PDF (1–2 pages) | `L02Journal_TuringCollective_ITAI1371.pdf` | `deliverables/` |
+There is **no shared group lab PDF.** Each team member runs the lab themselves and commits their own three PDFs (branch + PR — see [`docs/L02-TEAM-PDF-INTAKE.md`](docs/L02-TEAM-PDF-INTAKE.md)).
 
-> **Group name confirmed** (Pilot, 2026-08-27): "The Turing Collective", filename token `TuringCollective` (OQ-1 resolved). Filenames follow the Canvas "File Naming Convention" section character for character — note the journal file has **no underscore after `L02`** (`L02Journal_…`, not `L02_Journal_…`). Instructor-mandated filenames are the one place where this repo's own naming rules do **not** apply.
+| Deliverable | Filename pattern | Location |
+|---|---|---|
+| Raw notebook (shared) | `Module_02_Lab_Exercise.ipynb` | `src/` |
+| Notebook PDF (per member) | `L02_FirstLast_ITAI1371.pdf` | `deliverables/notebooks/` |
+| Reflection journal PDF (per member, 1–2 pages) | `L02Journal_FirstLast_ITAI1371.pdf` | `deliverables/journals/` |
+| Contribution journal PDF (per member) | `L02Contribution_FirstLast_ITAI1371.pdf` | `deliverables/contributions/` |
+
+> **Canvas group label:** "Turing Collective". **Per-member filenames use `FirstLast`** (e.g. `JosephClay`), not the group token — the notebook PDF carries each person's executed run, and their reflection and contribution journals analyze *that* run. Journal filename has **no underscore after `L02`** (`L02Journal_…`). `deliverables/L02_TuringCollective_ITAI1371.pdf` is Joseph Clay's export, retained pending cleanup; his canonical copy is `deliverables/notebooks/L02_JosephClay_ITAI1371.pdf`.
 
 ---
 
 ## Working method
 
 Work proceeds one exercise at a time: specify, implement, verify, commit. No batch dumps, no "write all 16 cells." Each defensive assertion in `pipeline_validator.py` exists for a reason documented in `docs/tdd-assertion-guide.md`, and each real bug hit along the way is logged in `docs/debugging-odyssey.md` rather than silently fixed.
+
+The Phase 0 gates (`scripts/verify_setup.py`, then `pytest tests/`) run automatically on every push via `.github/workflows/ci.yml`, so the pass/fail state is visible on the repo without running anything locally. Decisions that changed the spec or the tooling are recorded in `docs/adr/`.
 
 ---
 

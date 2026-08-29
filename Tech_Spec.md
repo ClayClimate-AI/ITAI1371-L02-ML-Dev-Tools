@@ -31,7 +31,7 @@
 | **Data Fetching** | In-memory only. Datasets load from `sklearn.datasets` built-ins or a local file in `data/`. No network calls at runtime. |
 | **Rendering** | matplotlib inline backend in the notebook; `Agg` backend in scripts and tests. Figures sized for portrait Letter — max `figsize=(10, 6)`. |
 | **Integrations** | None. No third-party services, no APIs, no auth. |
-| **Infrastructure** | Local filesystem + Git. No CI, no containers, no cloud runtime. |
+| **Infrastructure** | Local filesystem + Git. No containers, no cloud runtime. CI is permitted **solely** to re-run the existing Phase 0 gates (`scripts/verify_setup.py`, `pytest tests/`) on push — it adds no new methodology and no runtime dependency. See ADR 0002. |
 | **Performance** | Fully vectorized. Zero Python-level iteration over arrays or DataFrames. |
 | **Scalability** | Designed for datasets up to ~10,000 rows. Anything larger will not render legibly in a PDF and is out of scope. |
 | **Developer Experience** | Atomic, single-purpose functions. Every non-trivial cell carries a *why* comment. Any function should be explainable via P-I-O-F without notes. |
