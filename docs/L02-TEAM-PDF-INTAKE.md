@@ -1,32 +1,23 @@
 # L02 Team PDF Intake
 
-> **Write access = PR only. Do not push to `main`.**
-> Work on a branch, open a pull request, wait for Joseph to merge.
-> Touch only `deliverables/notebooks/`, `deliverables/journals/`, `deliverables/contributions/`.
-> Add **only your own three PDFs**, named `L02_FirstLast_ITAI1371.pdf` etc.
-> Do **not** edit `src/`, `tests/`, `.github/`, `docs/`, or the specs.
-> Do **not** edit anyone else's PDF, or `src/Module_02_Lab_Exercise.ipynb`.
-> `main` is protected: PR required, force-push blocked, deletion blocked.
+> **Process changed 2026-08-30 (per Prof. Rao).** Teammates no longer push to the repo.
+> Send your three PDFs to Joseph as a **Canvas message** by **Mon Sep 1, 8:00 PM**.
+> Joseph uploads them to the repo and submits the public GitHub link on Canvas before the
+> Tue Sep 2, 11:59 PM deadline. Collaborator access is being removed. The branch/PR path
+> below is retained only as a record of the earlier process.
 
-**Locked:** 2026-08-28  
-**Repo:** https://github.com/ClayClimate-AI/ITAI1371-L02-ML-Dev-Tools  
-**Due:** Sunday Aug 30, 11:59pm  
-**Canvas group label:** Turing Collective  
-**GitHub collaborators to invite (Write):** `Shareefah-Lab` · `lexdebusk` · `YL686`
+**Locked:** 2026-08-28 · **Updated:** 2026-09-01
+**Repo:** https://github.com/ClayClimate-AI/ITAI1371-L02-ML-Dev-Tools
+**Due:** Tuesday Sep 2, 11:59 PM (extended per Canvas, Aug 30)
+**Canvas group label:** Turing Collective
 
 ## Rule (do not reverse)
 
-There is **no shared group lab PDF**.  
-`deliverables/L02_TuringCollective_ITAI1371.pdf` (if still at that path) is **Joseph Clay’s** executed notebook export. Those outputs belong to **his** reflection and **his** contribution journal.
+There is **no shared group lab PDF**. Each member runs the lab themselves and submits three
+personal PDFs. A shared journal would describe one person's run and cancel the others'
+analysis. Shared `reflections.md` / `contributions.md` is **retired**.
 
-Each member runs the lab themselves and adds three personal PDFs.  
-Shared `reflections.md` / `contributions.md` is **retired**. A shared journal would describe Joseph’s run and cancel the other members’ analysis.
-
-Intake is **GitHub only** (branch + PR). No Slack/Drive drop as the official path.
-
----
-
-## Folders
+## Filenames and folders
 
 ```text
 deliverables/notebooks/L02_FirstLast_ITAI1371.pdf
@@ -34,30 +25,29 @@ deliverables/journals/L02Journal_FirstLast_ITAI1371.pdf
 deliverables/contributions/L02Contribution_FirstLast_ITAI1371.pdf
 ```
 
-Joseph’s lab PDF should live at:
+`FirstLast` = your name, no separator (e.g. `JosephClay`). No underscore after `L02` in the
+journal name. A file named any other way is graded as submitted — Joseph does not rename
+another member's file.
+
+## Current process (2026-08-30 onward)
 
 ```text
-deliverables/notebooks/L02_JosephClay_ITAI1371.pdf
+1. Run the lab yourself; export your three PDFs.
+2. Send all three to Joseph as a Canvas message by Mon Sep 1, 8:00 PM.
+3. Joseph commits them to deliverables/<type>/ and pushes.
+4. Joseph submits the public GitHub link on Canvas before Tue Sep 2, 11:59 PM.
 ```
 
-Do not overwrite another person’s file. Do not edit `src/Module_02_Lab_Exercise.ipynb` for someone else.
+Missing the 8:00 PM Monday hand-off means the file is not in the repo at submission.
+No individual contribution journal is **-20 points**.
 
----
-
-## Teammate Git path
+## Earlier process (retired — branch + PR)
 
 ```text
 1. Accept collaborator invite
-2. clone repo
-3. branch deliverables/<firstname>-pdfs
-4. add ONLY your three PDFs
-5. commit / push / PR into main
-6. Joseph reviews names + no overwrites
-7. merge
+2. clone repo; branch deliverables/<firstname>-pdfs
+3. add ONLY your three PDFs; commit / push / PR into main
+4. Joseph reviews names + no overwrites; merge
 ```
 
----
-
-## Joseph / Claude
-
-Create the three folders. Move Joseph’s existing lab PDF into `notebooks/` with his name. Do not invent teammate text. Do not create shared journal markdown. Do not commit until Joseph says so.
+`main` remains protected (PR required, force-push and deletion blocked, admin bypass).

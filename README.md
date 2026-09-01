@@ -89,7 +89,7 @@ ITAI1371-L02-ML-Dev-Tools/
 
 ## Required deliverables
 
-There is **no shared group lab PDF.** Each team member runs the lab themselves and commits their own three PDFs (branch + PR — see [`docs/L02-TEAM-PDF-INTAKE.md`](docs/L02-TEAM-PDF-INTAKE.md)).
+There is **no shared group lab PDF.** Each team member runs the lab themselves and submits their own three PDFs. As of 2026-08-30 (per Prof. Rao) teammates send PDFs to Joseph by Canvas message and Joseph commits them — see [`docs/L02-TEAM-PDF-INTAKE.md`](docs/L02-TEAM-PDF-INTAKE.md).
 
 | Deliverable | Filename pattern | Location |
 |---|---|---|
@@ -98,7 +98,7 @@ There is **no shared group lab PDF.** Each team member runs the lab themselves a
 | Reflection journal PDF (per member, 1–2 pages) | `L02Journal_FirstLast_ITAI1371.pdf` | `deliverables/journals/` |
 | Contribution journal PDF (per member) | `L02Contribution_FirstLast_ITAI1371.pdf` | `deliverables/contributions/` |
 
-> **Canvas group label:** "Turing Collective". **Per-member filenames use `FirstLast`** (e.g. `JosephClay`), not the group token — the notebook PDF carries each person's executed run, and their reflection and contribution journals analyze *that* run. Journal filename has **no underscore after `L02`** (`L02Journal_…`). `deliverables/L02_TuringCollective_ITAI1371.pdf` is Joseph Clay's export, retained pending cleanup; his canonical copy is `deliverables/notebooks/L02_JosephClay_ITAI1371.pdf`.
+> **Canvas group label:** "Turing Collective". **Per-member filenames use `FirstLast`** (e.g. `JosephClay`), not the group token — the notebook PDF carries each person's executed run, and their reflection and contribution journals analyze *that* run. Journal filename has **no underscore after `L02`** (`L02Journal_…`). A file submitted under any other name is graded as-is; Joseph does not rename another member's file.
 
 ---
 

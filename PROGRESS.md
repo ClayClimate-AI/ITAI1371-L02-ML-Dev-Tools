@@ -3,10 +3,11 @@
 **Governing sentence:** Test before code. Spec before implementation. Human checkpoint before every advance.
 
 ## Current state
-- **Phase:** 0 (Setup) — complete
-- **Last completed unit:** H — Cell 14 (markdown reflection, filled in)
-- **Next step:** Harvest step 3 — Reflective Journal (not started; interview-only per AGENTS.md, awaiting go-ahead)
-- **Environment:** .venv created | verify_setup: PASS | pytest: PASS (18 passed) | CI: PASS (run #1, ad12277)
+- **Phase:** Harvest / submission prep
+- **Last completed:** Harvest step 3 — Joseph's reflective journal committed (`0686bc8`, 2026-09-01)
+- **Next step:** Harvest step 4 — Joseph's contribution journal (D3); then aggregate any teammate PDFs received by Canvas and submit the GitHub link on Canvas (due Tue Sep 2, 11:59 PM)
+- **Environment:** .venv | verify_setup: PASS | pytest: PASS (18) | notebook `[1]`→`[7]` clean
+- **Notebook canonical path:** `src/Module_02_Lab_Exercise.ipynb` (moved back to `src/` 2026-08-31; the 2026-08-28 move to root was reversed)
 
 ## Unit log
 | # | Unit | Assertion | Code | Validated | Commit | Notes |
@@ -26,8 +27,8 @@
 |------|-------------|-----------|--------|-------|
 | 1 | Clean full notebook run (Restart-equivalent Run All via `nbconvert --execute --inplace`) | PASS | 2d36496 | Exit code 0; no cell error outputs (verified by scanning notebook JSON); execution counts 1→7 in order across cells 2,4,5,7,9,12,13; plot outputs present for Cells 7 and 13 |
 | 2 | PDF export → `deliverables/L02_TuringCollective_ITAI1371.pdf` | PASS | 8c110c7 | Regenerated via `nbconvert --to html` → `white-space:pre-wrap` CSS injected into `<head>` → headless Chrome `--print-to-pdf --no-pdf-header-footer`. C5 visual audit PASS: 10 pp, no code clipping (all previously-clipped lines now wrap), both plots whole and unsplit, counters [1]→[7], syntax highlighting preserved, no browser header/footer, no `file:///` path. Superseded ad-hoc PDF `L02_Turing_Collective_ITAI1371.pdf` (wrong name, footer path, clipped code) — deleted, never committed. Notebook re-execute produced timestamp-only diff → reverted (content identical to 2d36496). |
-| 3 | Reflective Journal | — | — | Not started |
-| 4 | Contribution Journal | — | — | Not started |
+| 3 | Reflective Journal → `deliverables/journals/L02Journal_JosephClay_ITAI1371.pdf` | PASS | 0686bc8 | 2-page reflection, interview-sourced (C6). Covers all 5 rubric elements; no step-by-step narration. Two earlier drafts rejected: v1 misattributed *The Guardrail Blueprint* as an HCC resource (fixed); v2 added 3 fabricated external citations — Salami/Simplico/Autonoma AI (removed). Final version cites nothing external. |
+| 4 | Contribution Journal → `deliverables/contributions/L02Contribution_JosephClay_ITAI1371.pdf` | — | — | Not started. Factual account, not reflective. 20 pts; "no individual contribution = -20". |
 
 ## Session handoffs
 ### 2026-08-25
@@ -44,3 +45,12 @@
 - Done: **notebook-move reconcile** — `git mv src/Module_02_Lab_Exercise.ipynb` → repo root; realigned README.md, docs/environment-setup.md, scripts/verify_setup.py, docs/submission-runbook.md (gitignored). **CI-governance reconcile** — CI workflow (`ad12277`) contradicted `Tech_Spec.md` §2 Infrastructure ("No CI") with no paper trail; amended Tech_Spec to carve out read-only Phase 0 gate automation (cites ADR 0002), added `.github/` + `docs/adr/` to the README repo map + a "gates run in CI" sentence, logged prompt-history entry [010].
 - Blocked: none
 - Next exact action: Harvest step 3 — Reflective Journal. Interview the Pilot; do not draft it. Source: docs/reflective-journal.md.
+
+### 2026-08-31 (separate session — reconstructed)
+- Done: notebook moved back to `src/Module_02_Lab_Exercise.ipynb` (canonical); `deliverables/` restructured into `notebooks/` `journals/` `contributions/` for per-member PDFs; `docs/L02-TEAM-PDF-INTAKE.md` added; `docs/project-template.md` and `docs/comprehensive-breakdown.md` created and gitignored (`6bb4a8a`, `629c514`). Teammate activity: Yilin Leng self-merged PRs #2–#4 (files landed at repo root, misnamed) — later moved into subfolders and root copies removed (`aa7749e`, `93738c1`); Alexander Debusk's 3 PDFs added. PRs #4 (Yilin) merged; Alex #4 / Shareefah #5 closed unmerged. Prof. Rao (Aug 30) changed teammate intake to Canvas message + manual upload, deadline extended to Tue Sep 2.
+- Blocked: none
+
+### 2026-09-01
+- Done: **D2 reflective journal** interview (C6) + committed `deliverables/journals/L02Journal_JosephClay_ITAI1371.pdf` (`0686bc8`). **Full repo audit** + fixes: gitignored `checkpoint.md` and `The_Guardrail_Blueprint.pdf`; refreshed `checkpoint.md` (was stale); rewrote `docs/L02-TEAM-PDF-INTAKE.md` for the Canvas-message process (PR path kept as record); updated README deliverables section; this log. Repo hygiene verified — no secrets/junk tracked, engine files all gitignored, `requirements.txt` matches notebook imports, gates green.
+- Blocked (needs Pilot / permission): (a) delete 4 stale remote branches — `git push --delete` blocked by classifier, do via GitHub UI or approve the command; branch `Shareefah-Lab-patch-1` deliberately NOT deleted (holds `LO2_SHAREEFAH_ITAI.pdf`, her only submission, unmerged); (b) remove collaborator access (needs `gh` auth or GitHub UI).
+- Next exact action: D3 — Joseph's contribution journal.
