@@ -4,8 +4,8 @@
 
 ## Current state
 - **Phase:** Harvest / submission prep
-- **Last completed:** Harvest step 3 — Joseph's reflective journal committed (`0686bc8`, 2026-09-01)
-- **Next step:** Harvest step 4 — Joseph's contribution journal (D3); then aggregate any teammate PDFs received by Canvas and submit the GitHub link on Canvas (due Tue Sep 2, 11:59 PM)
+- **Last completed:** Harvest step 4 — Joseph's contribution journal (D3) + Guardrail Blueprint tracked + stale remotes deleted (2026-09-01)
+- **Next step:** Await Shareefah's three PDFs via Canvas; then submit the GitHub link on Canvas (due Tue Sep 2, 11:59 PM). OQ-3 resolved as link-only.
 - **Environment:** .venv | verify_setup: PASS | pytest: PASS (18) | notebook `[1]`→`[7]` clean
 - **Notebook canonical path:** `src/Module_02_Lab_Exercise.ipynb` (moved back to `src/` 2026-08-31; the 2026-08-28 move to root was reversed)
 
@@ -28,7 +28,7 @@
 | 1 | Clean full notebook run (Restart-equivalent Run All via `nbconvert --execute --inplace`) | PASS | 2d36496 | Exit code 0; no cell error outputs (verified by scanning notebook JSON); execution counts 1→7 in order across cells 2,4,5,7,9,12,13; plot outputs present for Cells 7 and 13 |
 | 2 | PDF export → `deliverables/L02_TuringCollective_ITAI1371.pdf` | PASS | 8c110c7 | Regenerated via `nbconvert --to html` → `white-space:pre-wrap` CSS injected into `<head>` → headless Chrome `--print-to-pdf --no-pdf-header-footer`. C5 visual audit PASS: 10 pp, no code clipping (all previously-clipped lines now wrap), both plots whole and unsplit, counters [1]→[7], syntax highlighting preserved, no browser header/footer, no `file:///` path. Superseded ad-hoc PDF `L02_Turing_Collective_ITAI1371.pdf` (wrong name, footer path, clipped code) — deleted, never committed. Notebook re-execute produced timestamp-only diff → reverted (content identical to 2d36496). |
 | 3 | Reflective Journal → `deliverables/journals/L02Journal_JosephClay_ITAI1371.pdf` | PASS | 0686bc8 | 2-page reflection, interview-sourced (C6). Covers all 5 rubric elements; no step-by-step narration. Two earlier drafts rejected: v1 misattributed *The Guardrail Blueprint* as an HCC resource (fixed); v2 added 3 fabricated external citations — Salami/Simplico/Autonoma AI (removed). Final version cites nothing external. |
-| 4 | Contribution Journal → `deliverables/contributions/L02Contribution_JosephClay_ITAI1371.pdf` | — | — | Not started. Factual account, not reflective. 20 pts; "no individual contribution = -20". |
+| 4 | Contribution Journal → `deliverables/contributions/L02Contribution_JosephClay_ITAI1371.pdf` | PASS | (pending commit) | Factual account from repo + coordination record: Slack→Canvas intake, specs/gates/CI, teammate PDF placement; 2-page PDF. Source: `docs/contribution-joseph-clay.md`. |
 
 ## Session handoffs
 ### 2026-08-25
@@ -54,3 +54,8 @@
 - Done: **D2 reflective journal** interview (C6) + committed `deliverables/journals/L02Journal_JosephClay_ITAI1371.pdf` (`0686bc8`). **Full repo audit** + fixes: gitignored `checkpoint.md` and `The_Guardrail_Blueprint.pdf`; refreshed `checkpoint.md` (was stale); rewrote `docs/L02-TEAM-PDF-INTAKE.md` for the Canvas-message process (PR path kept as record); updated README deliverables section; this log. Repo hygiene verified — no secrets/junk tracked, engine files all gitignored, `requirements.txt` matches notebook imports, gates green.
 - Blocked (needs Pilot / permission): (a) delete 4 stale remote branches — `git push --delete` blocked by classifier, do via GitHub UI or approve the command; branch `Shareefah-Lab-patch-1` deliberately NOT deleted (holds `LO2_SHAREEFAH_ITAI.pdf`, her only submission, unmerged); (b) remove collaborator access (needs `gh` auth or GitHub UI).
 - Next exact action: D3 — Joseph's contribution journal.
+
+### 2026-09-01 (evening)
+- Done: **D3 contribution journal** → `deliverables/contributions/L02Contribution_JosephClay_ITAI1371.pdf` (factual; Slack→Canvas coordination, repo ownership, intake). **`The_Guardrail_Blueprint.pdf` tracked** (removed from `.gitignore`). **Five stale remotes deleted** (`Shareefah-Lab-patch-1`, `deliverables/AlexanderDebusk-pdfs`, three Yilin PR branches) — Shareefah artifacts stay off `main` until three Canvas PDFs arrive. OQ-3 treated as GitHub-link-only.
+- Blocked: Shareefah’s three PDFs via Canvas.
+- Next exact action: submit GitHub link on Canvas when ready; add Shareefah PDFs if/when received.
